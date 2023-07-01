@@ -67,10 +67,8 @@
     <script>
         function toggleContactBox(event) {
             var contactBox = document.getElementById("contact-box");
-            if (contactBox.style.display === "block") {
-                if (event.target !== document.getElementById("btn-contact")) {
-                    contactBox.style.display = "none";
-                }
+            if (contactBox.style.display === "block" && event.target.id !== "btn-contact") {
+                contactBox.style.display = "none";
             } else {
                 contactBox.style.display = "block";
             }
@@ -85,10 +83,11 @@
     <div class="btn-container">
         <button id="btn-contact" class="btn" onclick="toggleContactBox(event)">Comunícate conmigo</button>
         <div id="contact-box" class="contact-box">
-            <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
-            <p style="margin-top: 0;">3044265779</p>
-            <p style="margin-bottom: 10px;"><strong>Correo electrónico:</strong></p>
-            <p style="margin-top: 0;">nacho66larosa@gmail.com</p>
+            <p style="margin-bottom: 10px;"><strong>Número celular:</strong> 3044265779</p>
+            <p style="margin-bottom: 10px;"><strong>Correo electrónico:</strong> nacho66larosa@gmail.com</p>
+            <a href="https://api.whatsapp.com/send?phone=573043365779" target="_blank" class="btn">WhatsApp 1</a>
+            <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">WhatsApp 2</a>
+            <a href="https://www.instagram.com/artedelarosa" target="_blank" class="btn">Instagram</a>
         </div>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
@@ -96,8 +95,12 @@
             <img src="foto.jpg" alt="imagen1">
         </div>
         <div class="image-container">
-            <img src="papá.jpg" alt="imagen2">
+            <img src="papa.jpg" alt="imagen2">
         </div>
+        <div class="image-container">
+            <img src="imagen3.jpg" alt="imagen3">
+        </div>
+        <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
     </div>
 </body>
 </html>
