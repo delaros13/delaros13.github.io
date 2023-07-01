@@ -2,12 +2,14 @@
 <html>
 <head>
     <title>Arte de la Rosa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
@@ -16,15 +18,18 @@
         }
 
         .image-container {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            border: 1px solid white;
+            padding: 10px;
+            margin: 20px;
             cursor: pointer;
         }
 
         .image-container img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
 
         .contact-box {
@@ -86,7 +91,39 @@
         }
     </style>
     <script>
-        // Código JavaScript aquí
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactBox = document.getElementById("contact-box");
+            const modal = document.getElementById("modal");
+            const modalContent = document.getElementById("modal-content");
+
+            function toggleContactBox(event) {
+                contactBox.style.display = contactBox.style.display === "block" && event.target.id !== "btn-contact" ? "none" : "block";
+            }
+
+            function closeContactBox(event) {
+                if (!contactBox.contains(event.target) && event.target !== btnContact) {
+                    contactBox.style.display = "none";
+                }
+            }
+
+            function openModal(event) {
+                if (event.target.tagName === "IMG" && !event.target.hasAttribute("data-ignore-modal")) {
+                    modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
+                    modal.style.display = "block";
+                }
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+                modalContent.innerHTML = "";
+            }
+
+            const btnContact = document.getElementById("btn-contact");
+            btnContact.addEventListener("click", toggleContactBox);
+            document.addEventListener("click", closeContactBox);
+            document.addEventListener("click", openModal);
+            modal.addEventListener("click", closeModal);
+        });
     </script>
 </head>
 <body>
@@ -101,17 +138,17 @@
         </button>
         <div id="contact-box" class="contact-box">
             <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
+                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
             </a>
             <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
-                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
+                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
             </a>
             <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-                <img src="instagram.png" alt="Instagram" width="20" height="20">
+                <img src="instagram.png" alt="Instagram" width="20" height="20" data-ignore-modal>
             </a>
         </div>
     </div>    
-    <div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
             <img src="foto.jpg" alt="imagen1">
         </div>
