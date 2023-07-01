@@ -53,7 +53,7 @@
         .btn {
             display: block;
             margin-top: 10px;
-            padding: 10px 20px;
+            padding: 10px;
             background-color: #088A85;
             color: white;
             border: none;
@@ -61,11 +61,16 @@
             text-decoration: none;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn:hover {
-            background-color: #088A85;
+            background-color: #adc7c6;
         }
 
         .modal {
@@ -132,23 +137,20 @@
     <h2>Enchapado en Tamo</h2>
     <p>Jesús Ignacio De La Rosa</p>
     <p>Pasto-Nariño</p>
-    <style>
-        .btn img {
-            border-radius: 50%;
-        }
-    </style>
     
     <div class="btn-container">
-        <button id="btn-contact" class="btn">Comunícate conmigo</button>
+        <button id="btn-contact" class="btn">
+            <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
+        </button>
         <div id="contact-box" class="contact-box">
             <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-                <img src="whatsapp.png" alt="WhatsApp" width="30" height="30">
+                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
             </a>
             <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
-                <img src="whatsapp.png" alt="WhatsApp" width="30" height="30">
+                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
             </a>
             <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-                <img src="instagram.png" alt="Instagram" width="30" height="30">
+                <img src="instagram.png" alt="Instagram" width="20" height="20">
             </a>
         </div>
     </div>    
