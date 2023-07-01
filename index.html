@@ -54,7 +54,7 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #84bebd;
+            background-color: #58a3a1;
             color: white;
             border: none;
             text-align: center;
@@ -108,9 +108,11 @@
             }
 
             function openModal(event) {
-                if (event.target.tagName === "IMG" && !event.target.closest("#btn-contact")) {
-                    modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
-                    modal.style.display = "block";
+                if (event.target.tagName === "IMG") {
+                    if (!event.target.closest("#btn-contact")) {
+                        modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
+                        modal.style.display = "block";
+                    }
                 }
             }
 
