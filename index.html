@@ -3,24 +3,31 @@
 <head>
     <title>Arte de la Rosa</title>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
         .image-container {
             width: 300px;
-            height: 300px; /* Establecemos un tamaño fijo para todas las imágenes */
+            height: 300px;
             border: 1px solid white;
             padding: 10px;
-            float: left;
             margin-right: 10px;
-            margin-bottom: 10px; /* Agregamos margen inferior para separar las imágenes */
+            margin-bottom: 10px;
         }
 
         .image-container img {
-            width: 100%; /* Ajustamos el ancho de la imagen al 100% del contenedor */
-            height: 100%; /* Ajustamos la altura de la imagen al 100% del contenedor */
-            object-fit: cover; /* Redimensionamos la imagen manteniendo su relación de aspecto */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .contact-box {
-            display: none; /* Ocultamos inicialmente el recuadro de contacto */
+            display: none;
             border: 1px solid black;
             padding: 10px;
             width: 200px;
@@ -28,14 +35,13 @@
             background-color: #f9f9f9;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            position: absolute; /* Posicionamos el recuadro de contacto de forma absoluta */
-            z-index: 1; /* Aseguramos que el recuadro de contacto esté por encima de las imágenes */
+            position: absolute;
+            z-index: 1;
         }
 
         .btn-container {
-            clear: left; /* Limpiamos el flotado de los elementos anteriores */
-            margin-top: 10px; /* Agregamos un margen superior para separarlo de la descripción */
-            position: relative; /* Aseguramos que el contenedor del botón sea un contexto de posición relativa */
+            margin-top: 10px;
+            position: relative;
         }
 
         .btn {
@@ -60,30 +66,32 @@
         function toggleContactBox() {
             var contactBox = document.getElementById("contact-box");
             if (contactBox.style.display === "none") {
-                contactBox.style.display = "block"; /* Mostramos el recuadro de contacto */
+                contactBox.style.display = "block";
             } else {
-                contactBox.style.display = "none"; /* Ocultamos el recuadro de contacto */
+                contactBox.style.display = "none";
             }
         }
     </script>
 </head>
 <body>
-    <h1>Arte de la Rosa</h1>
-    <h2>Enchapado en Tamo</h2>
-    <p>Jesús Ignacio De La Rosa</p>
-    <p>Pasto-Nariño</p>
-    <div class="btn-container">
-        <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
-        <div id="contact-box" class="contact-box">
-            <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
-            <p style="margin-top: 0;">3044265779</p>
+    <div>
+        <h1>Arte de la Rosa</h1>
+        <h2>Enchapado en Tamo</h2>
+        <p>Jesús Ignacio De La Rosa</p>
+        <p>Pasto-Nariño</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
+            <div id="contact-box" class="contact-box">
+                <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
+                <p style="margin-top: 0;">3044265779</p>
+            </div>
         </div>
-    </div>
-    <div class="image-container">
-        <img src="foto.jpg" alt="imagen1">
-    </div>
-    <div class="image-container">
-        <img src="papá.jpg" alt="imagen2">
+        <div class="image-container">
+            <img src="foto.jpg" alt="imagen1">
+        </div>
+        <div class="image-container">
+            <img src="papá.jpg" alt="imagen2">
+        </div>
     </div>
 </body>
 </html>
