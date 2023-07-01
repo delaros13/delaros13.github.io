@@ -93,7 +93,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const contactBox = document.getElementById("contact-box");
-            const btnContact = document.getElementById("btn-contact");
             const modal = document.getElementById("modal");
             const modalContent = document.getElementById("modal-content");
 
@@ -108,7 +107,7 @@
             }
 
             function openModal(event) {
-                if (event.target.tagName === "IMG" && !event.target.closest("#btn-contact")) {
+                if (event.target.tagName === "IMG" && !event.target.hasAttribute("data-ignore-modal")) {
                     modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
                     modal.style.display = "block";
                 }
@@ -119,6 +118,7 @@
                 modalContent.innerHTML = "";
             }
 
+            const btnContact = document.getElementById("btn-contact");
             btnContact.addEventListener("click", toggleContactBox);
             document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
@@ -138,13 +138,13 @@
         </button>
         <div id="contact-box" class="contact-box">
             <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
+                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
             </a>
             <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
-                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20">
+                <img src="whatsapp.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
             </a>
             <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-                <img src="instagram.png" alt="Instagram" width="20" height="20">
+                <img src="instagram.png" alt="Instagram" width="20" height="20" data-ignore-modal>
             </a>
         </div>
     </div>    
