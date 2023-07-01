@@ -9,6 +9,12 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, p {
+            text-align: center;
         }
 
         .image-container {
@@ -16,8 +22,7 @@
             height: 300px;
             border: 1px solid white;
             padding: 10px;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            margin: 10px;
         }
 
         .image-container img {
@@ -74,18 +79,18 @@
     </script>
 </head>
 <body>
-    <div>
-        <h1>Arte de la Rosa</h1>
-        <h2>Enchapado en Tamo</h2>
-        <p>Jesús Ignacio De La Rosa</p>
-        <p>Pasto-Nariño</p>
-        <div class="btn-container">
-            <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
-            <div id="contact-box" class="contact-box">
-                <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
-                <p style="margin-top: 0;">3044265779</p>
-            </div>
+    <h1>Arte de la Rosa</h1>
+    <h2>Enchapado en Tamo</h2>
+    <p>Jesús Ignacio De La Rosa</p>
+    <p>Pasto-Nariño</p>
+    <div class="btn-container">
+        <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
+        <div id="contact-box" class="contact-box">
+            <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
+            <p style="margin-top: 0;">3044265779</p>
         </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
             <img src="foto.jpg" alt="imagen1">
         </div>
