@@ -7,10 +7,15 @@
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         h1, h2, p {
-            text-align: center;
+            margin: 10px 0;
         }
 
         .image-container {
@@ -41,7 +46,6 @@
         }
 
         .btn-container {
-            clear: left;
             margin-top: 10px;
             position: relative;
         }
@@ -83,8 +87,8 @@
     <div class="btn-container">
         <button id="btn-contact" class="btn" onclick="toggleContactBox(event)">Comunícate conmigo</button>
         <div id="contact-box" class="contact-box">
-            <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">WhatsApp 1</a>
-            <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">WhatsApp 2</a>
+            <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">WhatsApp</a>
+            <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">WhatsApp</a>
             <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">Instagram</a>
         </div>
     </div>
@@ -93,10 +97,10 @@
             <img src="foto.jpg" alt="imagen1">
         </div>
         <div class="image-container">
-            <img src="papa.jpg" alt="imagen2">
+            <img src="papá.jpg" alt="imagen2">
         </div>
         <div class="image-container">
-            <img src="imagen3.jpg" alt="imagen3">
+            <img src="foto.jpg" alt="imagen3">
         </div>
         <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
     </div>
