@@ -6,7 +6,7 @@
         .image-container {
             width: 300px;
             height: auto;
-            border: 1px solid brown;
+            border: 1px solid white;
             padding: 10px;
             float: left;
             margin-right: 10px;
@@ -23,6 +23,27 @@
             padding: 10px;
             width: 200px;
             margin-top: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: block; /* Cambiamos el botón a un elemento de bloque para que aparezca debajo */
+            margin-top: 10px; /* Agregamos un margen superior para separarlo de la descripción */
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
         }
     </style>
     <script>
@@ -41,18 +62,19 @@
     <h2>Enchapado en Tamo</h2>
     <p>Jesús de la Rosa</p>
     <p>Pasto-Nariño</p>
-    <button onclick="toggleContactBox()">Comunícate conmigo</button>
-    <div id="contact-box" class="contact-box">
-        Número celular: 3044265779
-    </div>
     <div class="image-container">
         <img src="foto.jpg" alt="imagen1">
     </div>
     <div class="image-container">
-        <img src="foto2.jpg" alt="imagen2">
+        <img src="Foto2.png" alt="imagen2">
     </div>
     <div class="image-container">
         <img src="foto.jpg" alt="imagen3">
+    </div>
+    <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
+    <div id="contact-box" class="contact-box">
+        <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
+        <p style="margin-top: 0;">3044265779</p>
     </div>
 </body>
 </html>
