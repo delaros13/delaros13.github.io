@@ -23,6 +23,7 @@
             border: 1px solid white;
             padding: 10px;
             margin: 10px;
+            cursor: pointer;
         }
 
         .image-container img {
@@ -47,6 +48,9 @@
         .btn-container {
             margin-top: 10px;
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .btn {
@@ -74,15 +78,62 @@
             background-color: transparent;
             border: none;
             cursor: pointer;
+            width: 50px;
+            height: 50px;
         }
 
         .instagram-btn img {
-            width: 30px;
-            height: 30px;
+            width: 100%;
+            height: 100%;
         }
 
         .instagram-btn:hover {
             opacity: 0.7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            max-height: 80%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .close {
+            color: #ccc;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
     <script>
@@ -93,6 +144,20 @@
             } else {
                 contactBox.style.display = "none";
             }
+        }
+
+        function openModal(imageSrc) {
+            var modal = document.getElementById("modal");
+            var modalContent = document.getElementById("modal-content");
+            var modalImg = document.getElementById("modal-image");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
         }
     </script>
 </head>
@@ -109,17 +174,23 @@
             <p style="margin-top: 10px;"><strong>Correo electrónico:</strong></p>
             <p style="margin-top: 0;">nacho66larosa@gmail.com</p>
         </div>
+        <button class="instagram-btn" onclick="window.open('https://www.instagram.com/artedelarosa', '_blank')">
+            <img src="instagram.png" alt="Instagram">
+        </button>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-        <div class="image-container">
+        <div class="image-container" onclick="openModal('foto.jpg')">
             <img src="foto.jpg" alt="imagen1">
         </div>
-        <div class="image-container">
+        <div class="image-container" onclick="openModal('papá.jpg')">
             <img src="papá.jpg" alt="imagen2">
         </div>
     </div>
-    <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="instagram-btn">
-        <img src="instagram.png" alt="Instagram">
-    </a>
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content" class="modal-content">
+            <img id="modal-image" src="" alt="Modal Image">
+        </div>
+    </div>
 </body>
 </html>
