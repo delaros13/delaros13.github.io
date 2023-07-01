@@ -5,16 +5,18 @@
     <style>
         .image-container {
             width: 300px;
-            height: auto;
+            height: 300px; /* Establecemos un tamaño fijo para todas las imágenes */
             border: 1px solid white;
             padding: 10px;
             float: left;
             margin-right: 10px;
+            margin-bottom: 10px; /* Agregamos margen inferior para separar las imágenes */
         }
 
         .image-container img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%; /* Ajustamos el ancho de la imagen al 100% del contenedor */
+            height: 100%; /* Ajustamos la altura de la imagen al 100% del contenedor */
+            object-fit: cover; /* Redimensionamos la imagen manteniendo su relación de aspecto */
         }
 
         .contact-box {
@@ -68,19 +70,9 @@
 <body>
     <h1>Arte de la Rosa</h1>
     <h2>Enchapado en Tamo</h2>
-    <p>Jesús de la Rosa</p>
+    <p>Jesús Ignacio De La Rosa</p>
     <p>Pasto-Nariño</p>
     <div class="btn-container">
         <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
         <div id="contact-box" class="contact-box">
-            <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
-            <p style="margin-top: 0;">3044265779</p>
-        </div>
-    </div>
-    <div class="image-container">
-        <img src="foto.jpg" alt="imagen1">
-    </div>
-    <div class="image-container">
-        <img src="papá.jpg" alt="imagen2">
-    </div>
-    <div class="image-container">
+            <p style="margin-bottom: 10px;"><strong>N
