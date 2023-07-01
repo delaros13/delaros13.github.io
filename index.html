@@ -108,11 +108,9 @@
             }
 
             function openModal(event) {
-                if (event.target.tagName === "IMG") {
-                    if (!event.target.closest("#btn-contact")) {
-                        modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
-                        modal.style.display = "block";
-                    }
+                if (event.target.tagName === "IMG" && !event.target.closest("#btn-contact")) {
+                    modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
+                    modal.style.display = "block";
                 }
             }
 
