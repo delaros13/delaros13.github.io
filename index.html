@@ -8,20 +8,51 @@
             height: auto;
             border: 1px solid brown;
             padding: 10px;
+            float: left;
+            margin-right: 10px;
         }
 
         .image-container img {
             max-width: 100%;
             max-height: 100%;
         }
+
+        .contact-box {
+            display: none; /* Ocultamos inicialmente el recuadro de contacto */
+            border: 1px solid black;
+            padding: 10px;
+            width: 200px;
+            margin-top: 10px;
+        }
     </style>
+    <script>
+        function toggleContactBox() {
+            var contactBox = document.getElementById("contact-box");
+            if (contactBox.style.display === "none") {
+                contactBox.style.display = "block"; /* Mostramos el recuadro de contacto */
+            } else {
+                contactBox.style.display = "none"; /* Ocultamos el recuadro de contacto */
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Jesús de la Rosa</h1>
-    <h2>Pasto-Nariño</h2>
-    <p>Enchapado en Tamo</p>
+    <h1>Arte de la Rosa</h1>
+    <h2>Enchapado en Tamo</h2>
+    <p>Jesús de la Rosa</p>
+    <p>Pasto-Nariño</p>
+    <button onclick="toggleContactBox()">Comunícate conmigo</button>
+    <div id="contact-box" class="contact-box">
+        Número celular: 3044265779
+    </div>
     <div class="image-container">
         <img src="foto.jpg" alt="imagen1">
+    </div>
+    <div class="image-container">
+        <img src="foto2.jpg" alt="imagen2">
+    </div>
+    <div class="image-container">
+        <img src="foto.jpg" alt="imagen3">
     </div>
 </body>
 </html>
