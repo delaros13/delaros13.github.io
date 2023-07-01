@@ -10,7 +10,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
         }
 
@@ -20,7 +19,7 @@
 
         .image-container {
             width: 300px;
-            height: auto;
+            height: 300px;
             border: 1px solid white;
             padding: 10px;
             margin: 20px;
@@ -29,7 +28,8 @@
 
         .image-container img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
 
         .contact-box {
@@ -54,7 +54,7 @@
             display: block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #088A85;
             color: white;
             border: none;
             text-align: center;
@@ -65,18 +65,66 @@
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #088A85;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
         }
     </style>
     <script>
-        function toggleContactBox(event) {
-            var contactBox = document.getElementById("contact-box");
-            if (contactBox.style.display === "block" && event.target.id !== "btn-contact") {
-                contactBox.style.display = "none";
-            } else {
-                contactBox.style.display = "block";
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactBox = document.getElementById("contact-box");
+            const btnContact = document.getElementById("btn-contact");
+            const modal = document.getElementById("modal");
+            const modalContent = document.getElementById("modal-content");
+
+            function toggleContactBox(event) {
+                contactBox.style.display = contactBox.style.display === "block" && event.target.id !== "btn-contact" ? "none" : "block";
             }
-        }
+
+            function closeContactBox(event) {
+                if (!contactBox.contains(event.target) && event.target !== btnContact) {
+                    contactBox.style.display = "none";
+                }
+            }
+
+            function openModal(event) {
+                if (event.target.tagName === "IMG") {
+                    modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
+                    modal.style.display = "block";
+                }
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+                modalContent.innerHTML = "";
+            }
+
+            btnContact.addEventListener("click", toggleContactBox);
+            document.addEventListener("click", closeContactBox);
+            document.addEventListener("click", openModal);
+            modal.addEventListener("click", closeModal);
+        });
     </script>
 </head>
 <body>
@@ -85,7 +133,7 @@
     <p>Jesús Ignacio De La Rosa</p>
     <p>Pasto-Nariño</p>
     <div class="btn-container">
-        <button id="btn-contact" class="btn" onclick="toggleContactBox(event)">Comunícate conmigo</button>
+        <button id="btn-contact" class="btn">Comunícate conmigo</button>
         <div id="contact-box" class="contact-box">
             <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">WhatsApp</a>
             <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">WhatsApp</a>
@@ -103,6 +151,9 @@
             <img src="foto.jpg" alt="imagen3">
         </div>
         <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
+    </div>
+    <div id="modal" class="modal">
+        <div id="modal-content" class="modal-content"></div>
     </div>
 </body>
 </html>
