@@ -26,11 +26,19 @@
             background-color: #f9f9f9;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            position: absolute; /* Posicionamos el recuadro de contacto de forma absoluta */
+            z-index: 1; /* Aseguramos que el recuadro de contacto esté por encima de las imágenes */
+        }
+
+        .btn-container {
+            clear: left; /* Limpiamos el flotado de los elementos anteriores */
+            margin-top: 10px; /* Agregamos un margen superior para separarlo de la descripción */
+            position: relative; /* Aseguramos que el contenedor del botón sea un contexto de posición relativa */
         }
 
         .btn {
-            display: block; /* Cambiamos el botón a un elemento de bloque para que aparezca debajo */
-            margin-top: 10px; /* Agregamos un margen superior para separarlo de la descripción */
+            display: block;
+            margin-top: 10px;
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
@@ -62,19 +70,17 @@
     <h2>Enchapado en Tamo</h2>
     <p>Jesús de la Rosa</p>
     <p>Pasto-Nariño</p>
+    <div class="btn-container">
+        <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
+        <div id="contact-box" class="contact-box">
+            <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
+            <p style="margin-top: 0;">3044265779</p>
+        </div>
+    </div>
     <div class="image-container">
         <img src="foto.jpg" alt="imagen1">
     </div>
     <div class="image-container">
-        <img src="Foto2.png" alt="imagen2">
+        <img src="papá.jpg" alt="imagen2">
     </div>
     <div class="image-container">
-        <img src="foto.jpg" alt="imagen3">
-    </div>
-    <button class="btn" onclick="toggleContactBox()">Comunícate conmigo</button>
-    <div id="contact-box" class="contact-box">
-        <p style="margin-bottom: 10px;"><strong>Número celular:</strong></p>
-        <p style="margin-top: 0;">3044265779</p>
-    </div>
-</body>
-</html>
