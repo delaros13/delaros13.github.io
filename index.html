@@ -20,9 +20,9 @@
         }
 
         .image-container {
-            width: 100%; /* Ajusta el ancho al 100% del contenedor principal */
-            max-width: 300px; /* Establece un ancho máximo para evitar que las imágenes sean demasiado grandes en pantallas grandes */
-            height: auto; /* El alto se ajusta automáticamente para mantener la proporción de la imagen */
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             border: 1px solid white;
             padding: 10px;
             margin: 20px;
@@ -100,10 +100,12 @@
             const modalContent = document.getElementById("modal-content");
 
             function toggleContactBox(event) {
+                const btnContact = document.getElementById("btn-contact");
                 contactBox.style.display = contactBox.style.display === "block" && event.target.id !== "btn-contact" ? "none" : "block";
             }
 
             function closeContactBox(event) {
+                const btnContact = document.getElementById("btn-contact");
                 if (!contactBox.contains(event.target) && event.target !== btnContact) {
                     contactBox.style.display = "none";
                 }
