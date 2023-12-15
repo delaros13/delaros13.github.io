@@ -105,14 +105,8 @@
             const modal = document.getElementById("modal");
             const modalContent = document.getElementById("modal-content");
 
-            function toggleContactBox(event) {
-                const btnContact = document.getElementById("btn-contact");
-                contactBox.style.display = contactBox.style.display === "block" && event.target.id !== "btn-contact" ? "none" : "block";
-            }
-
             function closeContactBox(event) {
-                const btnContact = document.getElementById("btn-contact");
-                if (!contactBox.contains(event.target) && event.target !== btnContact) {
+                if (!contactBox.contains(event.target)) {
                     contactBox.style.display = "none";
                 }
             }
@@ -129,8 +123,6 @@
                 modalContent.innerHTML = "";
             }
 
-            const btnContact = document.getElementById("btn-contact");
-            btnContact.addEventListener("click", toggleContactBox);
             document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
             modal.addEventListener("click", closeModal);
@@ -144,9 +136,6 @@
     <p>Pasto-Nariño</p>
     
     <div class="btn-container">
-        <button id="btn-contact" class="btn">
-            Comunícate conmigo
-        </button>
         <div id="contact-box" class="contact-box">
             <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
                 <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
