@@ -105,8 +105,14 @@
             const modal = document.getElementById("modal");
             const modalContent = document.getElementById("modal-content");
 
+            function toggleContactBox(event) {
+                const btnContact = document.getElementById("btn-contact");
+                contactBox.style.display = contactBox.style.display === "block" && event.target.id !== "btn-contact" ? "none" : "block";
+            }
+
             function closeContactBox(event) {
-                if (!contactBox.contains(event.target)) {
+                const btnContact = document.getElementById("btn-contact");
+                if (!contactBox.contains(event.target) && event.target !== btnContact) {
                     contactBox.style.display = "none";
                 }
             }
@@ -123,6 +129,8 @@
                 modalContent.innerHTML = "";
             }
 
+            const btnContact = document.getElementById("btn-contact");
+            btnContact.addEventListener("click", toggleContactBox);
             document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
             modal.addEventListener("click", closeModal);
