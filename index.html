@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Arte de la Rosa</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte de la Rosa</title>
     <style>
         body {
             margin: 0;
@@ -106,13 +107,15 @@
             const modalContent = document.getElementById("modal-content");
 
             function toggleContactBox(event) {
-                const btnContact = document.getElementById("btn-contact");
-                contactBox.style.display = contactBox.style.display === "block" && event.target.id !== "btn-contact" ? "none" : "block";
+                if (event.target.id === "btn-contact" || event.target.closest("#btn-contact")) {
+                    contactBox.style.display = contactBox.style.display === "block" ? "none" : "block";
+                } else {
+                    contactBox.style.display = "none";
+                }
             }
 
             function closeContactBox(event) {
-                const btnContact = document.getElementById("btn-contact");
-                if (!contactBox.contains(event.target) && event.target !== btnContact) {
+                if (!contactBox.contains(event.target) && event.target.id !== "btn-contact") {
                     contactBox.style.display = "none";
                 }
             }
@@ -129,8 +132,7 @@
                 modalContent.innerHTML = "";
             }
 
-            const btnContact = document.getElementById("btn-contact");
-            btnContact.addEventListener("click", toggleContactBox);
+            document.getElementById("btn-contact").addEventListener("click", toggleContactBox);
             document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
             modal.addEventListener("click", closeModal);
@@ -144,6 +146,9 @@
     <p>Pasto-Nariño</p>
     
     <div class="btn-container">
+        <button id="btn-contact" class="btn">
+            Comunícate conmigo
+        </button>
         <div id="contact-box" class="contact-box">
             <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
                 <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
