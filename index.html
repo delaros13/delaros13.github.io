@@ -23,11 +23,11 @@
 
         .image-container {
             width: 100%;
-            max-width: 500px; /* Ajustar según necesites */
+            max-width: 500px; /* Aumentamos el tamaño máximo de la imagen */
             height: auto;
             border: 1px solid white;
             padding: 10px;
-            margin: 20px auto; /* Ajustar según necesites */
+            margin: 20px;
             cursor: pointer;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -35,8 +35,8 @@
         }
 
         .image-container img {
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Modificamos la anchura al 100% */
+            height: 100%; /* Modificamos la altura al 100% */
             object-fit: cover;
         }
 
@@ -114,35 +114,6 @@
             color: #000;
             font-size: 20px;
         }
-
-        /* Estilos para la imagen circular */
-        .circular-image-container {
-            width: 250px; /* Ajustar según necesites */
-            height: 250px; /* Ajustar según necesites */
-            border-radius: 50%;
-            overflow: hidden;
-            margin-bottom: 20px; /* Ajustar según necesites */
-        }
-
-        .circular-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Estilos para los párrafos */
-        .paragraph-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%; /* Ajustar según necesites */
-            margin: 20px auto; /* Ajustar según necesites */
-        }
-
-        .paragraph-container p {
-            flex: 1;
-            margin: 0 10px; /* Espacio entre el párrafo y la imagen */
-        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -184,18 +155,8 @@
     </script>
 </head>
 <body>
-    <!-- Contenedor para la imagen y los párrafos -->
-    <div class="paragraph-container">
-        <!-- Párrafo izquierdo -->
-        <p>-Aquí pondriamos toda la historia, de como se hace el producto, etc.</p>
-        <!-- Imagen -->
-        <img src="logo1.png" alt="loguito" style="width: 300px;"> <!-- Modificamos el ancho de la imagen -->
-        <!-- Párrafo derecho -->
-        <p>-Tal vez pondriamos participaciones en ferias, trayectoria tal vez.</p>
-    </div>
-    
+    <!-- Modificado: Eliminamos el título y el subtítulo -->
     <!-- Continuamos con el resto del contenido -->
-
     <div class="contact-links">
         <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank">
             <img src="wap.png" alt="WhatsApp" width="45" height="45" data-ignore-modal>
@@ -204,6 +165,9 @@
             <img src="insta.png" alt="Instagram" width="45" height="45" data-ignore-modal>
         </a>
     </div>
+    <div class="image-container">
+        <img src="logo1.png" alt="loguito">
+    </div>
 
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
@@ -211,8 +175,14 @@
         </div>
         <div class="image-container">
             <img src="papá.jpg" alt="imagen2">
-
+        </div>
+        <div class="image-container">
+            <img src="centrodemesa.jpeg" alt="imagen3">
+        </div>
         <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
     </div>
     <div id="modal" class="modal">
-        <div
+        <div class="modal-content" id="modal-content"></div>
+    </div>
+</body>
+</html>
