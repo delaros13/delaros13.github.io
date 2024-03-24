@@ -15,7 +15,6 @@
             text-align: center;
             min-height: 100vh;
             background-color: #f9f9f9;
-            position: relative; /* Agregado */
         }
 
         h1, h2, p {
@@ -42,29 +41,40 @@
         }
 
         .contact-box {
-            display: flex; /* Cambiado */
-            justify-content: center; /* Agregado */
-            position: absolute;
-            bottom: 20px; /* Ajustado */
-            left: 50%; /* Agregado */
-            transform: translateX(-50%); /* Agregado */
-            width: auto; /* Cambiado */
-            background-color: #f9f9f9;
+            display: none;
+            border: 1px solid black;
             padding: 10px;
+            width: 200px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            position: absolute;
             z-index: 1;
         }
 
-        .contact-box a {
-            display: inline-block; /* Agregado */
-            margin: 0 10px; /* Agregado */
+        .btn-container {
+            margin-top: 10px;
+            position: relative;
         }
 
-        .contact-box a img {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%; /* Agregado */
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #58a3a1;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #adc7c6;
         }
 
         .modal {
@@ -89,11 +99,41 @@
             width: 100%;
             height: auto;
         }
+
+        /* Nuevos estilos */
+        .contact-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const contactBox = document.getElementById("contact-box");
             const modal = document.getElementById("modal");
             const modalContent = document.getElementById("modal-content");
+
+            function toggleContactBox(event) {
+                if (event.target.id === "btn-contact" || event.target.closest("#btn-contact")) {
+                    contactBox.style.display = contactBox.style.display === "block" ? "none" : "block";
+                } else {
+                    contactBox.style.display = "none";
+                }
+            }
+
+            function closeContactBox(event) {
+                if (!contactBox.contains(event.target) && event.target.id !== "btn-contact") {
+                    contactBox.style.display = "none";
+                }
+            }
 
             function openModal(event) {
                 if (event.target.tagName === "IMG" && !event.target.hasAttribute("data-ignore-modal")) {
@@ -107,6 +147,8 @@
                 modalContent.innerHTML = "";
             }
 
+            document.getElementById("btn-contact").addEventListener("click", toggleContactBox);
+            document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
             modal.addEventListener("click", closeModal);
         });
@@ -116,8 +158,20 @@
     <h1>Arte de la Rosa</h1>
     <h2>Enchapado en Tamo</h2>
     <p>Jesús Ignacio De La Rosa</p>
-    <p>Pasto-Nariño</p>
+    <p>Pasto - Nariño</p>
     
+    <div class="contact-links">
+        <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank">
+            <img src="wap.png" alt="WhatsApp" width="30" height="30" data-ignore-modal>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank">
+            <img src="wap.png" alt="WhatsApp" width="30" height="30" data-ignore-modal>
+        </a>
+        <a href="https://www.instagram.com/_artedelarosa" target="_blank">
+            <img src="insta.png" alt="Instagram" width="30" height="30" data-ignore-modal>
+        </a>
+    </div>
+
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
             <img src="jarron.jpeg" alt="imagen1">
@@ -130,17 +184,6 @@
         </div>
         <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
     </div>
-    
-    <!-- Contenedor de botones de contacto -->
-    <div class="contact-box">
-        <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-            <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
-        </a>
-        <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-            <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
-        </a>
-    </div>    
-    
     <div id="modal" class="modal">
         <div id="modal-content" class="modal-content"></div>
     </div>
