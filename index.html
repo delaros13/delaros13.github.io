@@ -41,7 +41,6 @@
         }
 
         .contact-box {
-            display: none;
             border: 1px solid black;
             padding: 10px;
             width: 200px;
@@ -132,7 +131,8 @@
                 modalContent.innerHTML = "";
             }
 
-            document.getElementById("btn-contact").addEventListener("click", toggleContactBox);
+            // Eliminando la escucha del evento del botón de contacto
+            // document.getElementById("btn-contact").addEventListener("click", toggleContactBox);
             document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
             modal.addEventListener("click", closeModal);
@@ -145,20 +145,19 @@
     <p>Jesús Ignacio De La Rosa</p>
     <p>Pasto-Nariño</p>
     
-    <div class="btn-container">
-        <!-- Eliminamos el botón "Comunícate conmigo" -->
-        <div id="contact-box" class="contact-box">
-            <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-                <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
-                <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
-            </a>
-            <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-                <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
-            </a>
-        </div>
-    </div>    
+    <!-- Eliminando el botón "Comunícate conmigo" pero conservando el contenido -->
+    <div id="contact-box" class="contact-box">
+        <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
+            <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
+            <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
+        </a>
+        <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
+            <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
+        </a>
+    </div>
+
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
             <img src="jarron.jpeg" alt="imagen1">
