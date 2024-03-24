@@ -114,6 +114,21 @@
             color: #000;
             font-size: 20px;
         }
+
+        /* Estilos para la imagen circular */
+        .circular-image-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px; /* Ajusta el margen según necesites */
+        }
+
+        .circular-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -155,6 +170,12 @@
     </script>
 </head>
 <body>
+    <!-- Agregamos la imagen circular aquí -->
+    <div class="circular-image-container">
+        <img class="circular-image" src="logo.png" alt="Imagen circular">
+    </div>
+    
+    <!-- Continuamos con el resto del contenido -->
     <h1>Arte de la Rosa</h1>
     <h2>Enchapado en Tamo</h2>
     <p>Jesús Ignacio De La Rosa</p>
@@ -185,4 +206,4 @@
         <div id="modal-content" class="modal-content"></div>
     </div>
 </body>
-</html>
+</html
