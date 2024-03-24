@@ -15,6 +15,7 @@
             text-align: center;
             min-height: 100vh;
             background-color: #f9f9f9;
+            position: relative; /* Agregado */
         }
 
         h1, h2, p {
@@ -41,39 +42,29 @@
         }
 
         .contact-box {
-            border: 1px solid black;
-            padding: 10px;
-            width: 200px;
-            margin-top: 10px;
+            display: flex; /* Cambiado */
+            justify-content: center; /* Agregado */
+            position: absolute;
+            bottom: 20px; /* Ajustado */
+            left: 50%; /* Agregado */
+            transform: translateX(-50%); /* Agregado */
+            width: auto; /* Cambiado */
             background-color: #f9f9f9;
+            padding: 10px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            position: absolute;
             z-index: 1;
         }
 
-        .btn-container {
-            margin-top: 10px;
-            position: relative;
+        .contact-box a {
+            display: inline-block; /* Agregado */
+            margin: 0 10px; /* Agregado */
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #58a3a1;
-            color: white;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #adc7c6;
+        .contact-box a img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* Agregado */
         }
 
         .modal {
@@ -127,16 +118,6 @@
     <p>Jesús Ignacio De La Rosa</p>
     <p>Pasto-Nariño</p>
     
-    <div class="btn-container">
-        <div id="contact-box" class="contact-box">
-            <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-                <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
-            </a>
-            <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-                <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
-            </a>
-        </div>
-    </div>    
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
             <img src="jarron.jpeg" alt="imagen1">
@@ -149,6 +130,17 @@
         </div>
         <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
     </div>
+    
+    <!-- Contenedor de botones de contacto -->
+    <div class="contact-box">
+        <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
+            <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
+        </a>
+        <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
+            <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
+        </a>
+    </div>    
+    
     <div id="modal" class="modal">
         <div id="modal-content" class="modal-content"></div>
     </div>
