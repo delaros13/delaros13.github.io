@@ -101,23 +101,8 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const contactBox = document.getElementById("contact-box");
             const modal = document.getElementById("modal");
             const modalContent = document.getElementById("modal-content");
-
-            function toggleContactBox(event) {
-                if (event.target.id === "btn-contact" || event.target.closest("#btn-contact")) {
-                    contactBox.style.display = contactBox.style.display === "block" ? "none" : "block";
-                } else {
-                    contactBox.style.display = "none";
-                }
-            }
-
-            function closeContactBox(event) {
-                if (!contactBox.contains(event.target) && event.target.id !== "btn-contact") {
-                    contactBox.style.display = "none";
-                }
-            }
 
             function openModal(event) {
                 if (event.target.tagName === "IMG" && !event.target.hasAttribute("data-ignore-modal")) {
@@ -131,9 +116,6 @@
                 modalContent.innerHTML = "";
             }
 
-            // Eliminando la escucha del evento del botón de contacto
-            // document.getElementById("btn-contact").addEventListener("click", toggleContactBox);
-            document.addEventListener("click", closeContactBox);
             document.addEventListener("click", openModal);
             modal.addEventListener("click", closeModal);
         });
@@ -145,19 +127,19 @@
     <p>Jesús Ignacio De La Rosa</p>
     <p>Pasto-Nariño</p>
     
-    <!-- Eliminando el botón "Comunícate conmigo" pero conservando el contenido -->
-    <div id="contact-box" class="contact-box">
-        <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
-            <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
-        </a>
-        <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
-            <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
-        </a>
-        <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
-            <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
-        </a>
-    </div>
-
+    <div class="btn-container">
+        <div id="contact-box" class="contact-box">
+            <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank" class="btn">
+                <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=573013257981" target="_blank" class="btn">
+                <img src="wap.png" alt="WhatsApp" width="20" height="20" data-ignore-modal>
+            </a>
+            <a href="https://www.instagram.com/_artedelarosa" target="_blank" class="btn">
+                <img src="insta.png" alt="Instagram" width="20" height="20" data-ignore-modal>
+            </a>
+        </div>
+    </div>    
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div class="image-container">
             <img src="jarron.jpeg" alt="imagen1">
