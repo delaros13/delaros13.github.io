@@ -1,125 +1,413 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arte de la Rosa</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Añadido para centrar verticalmente */
-            text-align: center;
-            min-height: 100vh;
-            background-color: #f9f9f9;
-        }
-
-        h1, h2, p {
-            margin: 10px 0;
-        }
-
-        .image-container {
-            width: 100%;
-            max-width: 500px; /* Aumentamos el tamaño máximo de la imagen */
-            height: auto;
-            border: 1px solid white;
-            padding: 10px;
-            margin: 20px;
+<html lang="en" style="scroll-behavior: smooth;"><head>
+	<style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+	<style>
+        /* Estilo para la imagen en su tamaño original */
+        .thumbnail {
+            width: 100px;  /* tamaño original */
             cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            transition: transform 0.3s ease;  /* transición suave */
         }
 
-        .image-container img {
-            width: 100%; /* Modificamos la anchura al 100% */
-            height: 100%; /* Modificamos la altura al 100% */
-            object-fit: cover;
+        /* Cuando la imagen está siendo clickeada */
+        .thumbnail:active {
+            transform: scale(2.3);  /* agranda la imagen */
         }
+		
+		.full-image {
+    width: auto; /* Usa el tamaño original de la imagen */
+    height: auto; /* Usa el tamaño original de la imagen */
+    max-width: 90%;  /* Para evitar que la imagen sea demasiado grande */
+    max-height: 90%; /* Para evitar que la imagen sea demasiado grande */
+    object-fit: contain; /* Asegura que la imagen no se recorte */
+		}
 
-        .contact-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        .contact-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #000;
-            font-size: 20px;
-        }
+
+
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const contactBox = document.getElementById("contact-box");
-            const modal = document.getElementById("modal");
-            const modalContent = document.getElementById("modal-content");
 
-            function toggleContactBox(event) {
-                if (event.target.id === "btn-contact" || event.target.closest("#btn-contact")) {
-                    contactBox.style.display = contactBox.style.display === "block" ? "none" : "block";
-                } else {
-                    contactBox.style.display = "none";
-                }
-            }
 
-            function closeContactBox(event) {
-                if (!contactBox.contains(event.target) && event.target.id !== "btn-contact") {
-                    contactBox.style.display = "none";
-                }
-            }
+	
+	<script type="text/javascript">
+			</script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Home</title>
+	<base href="http://artedelarosa.infy.uk/">
+	<link rel="canonical" href="http://artedelarosa.infy.uk/">	
+	
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+					<meta name="description" content="Home">
+			<meta name="keywords" content="Home">
+			
+	<!-- Facebook Open Graph -->
+		<meta property="og:title" content="Home">
+			<meta property="og:description" content="Home">
+			<meta property="og:image" content="">
+			<meta property="og:type" content="article">
+			<meta property="og:url" content="http://artedelarosa.infy.uk/">
+		<!-- Facebook Open Graph end -->
 
-            function openModal(event) {
-                if (event.target.tagName === "IMG" && !event.target.hasAttribute("data-ignore-modal")) {
-                    modalContent.innerHTML = `<img src="${event.target.src}" alt="imagen ampliada">`;
-                    modal.style.display = "block";
-                }
-            }
+			<script src="js/common-bundle.js?ts=20250202074306" type="text/javascript"></script>
+	<script src="js/a188dd97551b00de115a0c49ff9ea0c8-bundle.js?ts=20250202074306" type="text/javascript"></script>
+	<link href="css/common-bundle.css?ts=20250202074306" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese" rel="stylesheet" type="text/css">
+	<link href="css/a188dd97551b00de115a0c49ff9ea0c8-bundle.css?ts=20250202074306" rel="stylesheet" type="text/css" id="wb-page-stylesheet">
+	
+	<script type="text/javascript">
+	window.useTrailingSlashes = true;
+	window.disableRightClick = false;
+	window.currLang = 'en';
+</script>
+		
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
 
-            function closeModal() {
-                modal.style.display = "none";
-                modalContent.innerHTML = "";
-            }
-
-            document.getElementById("btn-contact").addEventListener("click", toggleContactBox);
-            document.addEventListener("click", closeContactBox);
-            document.addEventListener("click", openModal);
-            modal.addEventListener("click", closeModal);
-        });
-    </script>
+		<script type="text/javascript">
+		$(function () {
+});    </script>
 </head>
-<body>
-    <div class="image-container">
-        <img src="logo1.png" alt="loguito">
-    </div>
 
-    <div class="contact-links">
-        <a href="https://api.whatsapp.com/send?phone=573044265779" target="_blank">
-            <img src="wap.png" alt="WhatsApp" width="45" height="45" data-ignore-modal>
-        </a>
-        <a href="https://www.instagram.com/artedelarosapasto" target="_blank">
-            <img src="insta.png" alt="Instagram" width="45" height="45" data-ignore-modal>
-        </a>
-    </div>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-        <div class="image-container">
-            <img src="jarron.jpeg" alt="imagen1">
-        </div>
-        <div class="image-container">
-            <img src="papá.jpg" alt="imagen2">
-        </div>
-        <!-- Agrega más divs con la clase "image-container" y las imágenes correspondientes -->
-    </div>
+<body class="site site-lang-en ">
+	<style type="text/css">
+	
+.dd12bde8c-close {
+	position: absolute;
+	display: block;
+	right: 30px;
+	font-size: 25px;
+	cursor: pointer;
+}
+.dd12bde8c-close::before {
+	content: '×';
+}
+.dd12bde8c-top {
+	z-index: 99999;
+	position: relative;
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	padding: 15px;
+	border: 2px solid #000;
+	font-size: 14px;
+	color: #333;
+}
+.dd12bde8c-top .dd12bde8c-close {
+	color: #333;
+}
+.dd12bde8c-top-logo {
+	text-decoration: none;
+	font-weight: normal;
+}
+.dd12bde8c-top-logo img {
+	height: 24px;
+	margin-top: -4px;
+}
+.dd12bde8c-top-text {
+	margin: 5px 35px;
+	text-align: center;
+}
+.dd12bde8c-bottom {
+	z-index: 99999;
+	position: relative;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	text-align: center;
+	padding: 12px 15px;
+	font-size: 14px;
+	color: #F5EBE0;
+	background-color: #4F9373;
+}
+.dd12bde8c-bottom .dd12bde8c-close {
+	top: 14px;
+	color: #F5EBE0;
+}
+.dd12bde8c-bottom hr {
+	display: block;
+	font-size: 1px;
+	line-height: 1px;
+	overflow: hidden;
+	padding: 0;
+	margin: 16px 16px 12px;
+	border-top: 1px solid #F5EBE0;
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0;
+}
+.dd12bde8c-bottom-text-a,
+.dd12bde8c-bottom-text-b {
+	padding: none 0;
+	text-align: center;
+}
+.dd12bde8c-bottom-text-a {
+	padding-left: 36px;
+	padding-right: 36px;
+}
+.dd12bde8c-bottom-text-a hr {
+	margin-left: -20px;
+	margin-right: -20px;
+}
 
-    <div id="modal" class="modal">
-        <div class="modal-content" id="modal-content"></div>
-    </div>
-</body>
-</html>
+.dd12bde8c-bottom-text-a a,
+.dd12bde8c-bottom-text-a a:hover,
+.dd12bde8c-bottom-text-a a:active,
+.dd12bde8c-bottom-text-a a:visited,
+.dd12bde8c-bottom-text-b a,
+.dd12bde8c-bottom-text-b a:hover,
+.dd12bde8c-bottom-text-b a:active,
+.dd12bde8c-bottom-text-b a:visited {
+	text-decoration: underline;
+	color: #F5EBE0;
+}
+</style>
+<script type="text/javascript">
+	window.addEventListener("DOMContentLoaded", function() {
+		var elem = $(".dd12bde8c-bottom");
+		if (elem.length > 0) {
+			var topElem = $(".dd12bde8c-top").parent();
+			if (topElem.length) {
+				topElem.append(elem);
+				elem[0].style.display = '';
+			}
+			else if (document.body) {
+				document.body.appendChild(elem[0]);
+				elem[0].style.display = '';
+			}
+		}
+	});
+</script>
+
+<div id="wb_root" class="root wb-layout-vertical root-padding-fixed" style="padding: 71px 0px 0px;"><div class="wb_sbg"></div><div id="wb_header_a188dd97551b00de115a0c49ff9ea0c8" class="wb_element wb-sticky wb-layout-element" data-plugin="LayoutElement" data-h-align="center" data-v-align="top"><div class="wb_content wb-layout-vertical"><div id="a188dd97478502562aad92b360f86a3b" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a18b675f42620071369d4c9327495dea" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd97478506445829c57879f86a1d" class="wb_element wb-menu wb-prevent-layout-click wb-menu-mobile" data-plugin="Menu"><a class="btn btn-default btn-collapser" data-popup-processed="true"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><ul class="hmenu" dir="ltr" style="top: 51px; max-height: calc(-51px + 98vh); left: 20px; right: 20px; width: auto;"><li class="wb_this_page_menu_item active"><a href="javascript:void(0)" data-popup-processed="true">Home</a></li><li class="wb_this_page_menu_item" data-anchor="Productos"><a href="#productos" data-popup-processed="true">Productos</a></li><li class="wb_this_page_menu_item" data-anchor="Productos"><a href="#History" data-popup-processed="true">Our history</a></li><li class="wb_this_page_menu_item wb-menu-item-exceeded" data-anchor="Contacts" data-plugin="Menu Items" style="outline: none solid #ff7600;overflow:visible;"><a href="javascript:void(0)" data-popup-processed="true"><i class="fa fa-star"></i>&nbsp;<span>Contacts</span></a></li></ul><div class="clearfix"></div></div><div id="a188dd97478507833a802826ff10c6ea" class="wb_element wb-prevent-layout-click wb-store-cart" data-plugin="StoreCart" style="outline: none solid #ff7600;overflow:visible;"><a href="GMAIL.COM" target="_blank" onclick="event.stopPropagation();event.returnValue=true;return true;" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:1;display:block;" data-popup-processed="true"></a><div class="wb-store-cart-wrp">
+	<script type="text/javascript">
+		$(function() { wb_require(['store/js/StoreCartElement'], function(app) { app.init('a188dd97478507833a802826ff10c6ea', '/wb_cart/'); }); });
+	</script>
+</div>
+</div></div></div></div></div></div></div><div id="wb_main_a188dd97551b00de115a0c49ff9ea0c8" class="wb_element wb-layout-element" data-plugin="LayoutElement" style="min-height: 472px;"><div class="wb_content wb-layout-vertical"><div id="a188dd97478509ae54a28d180b5bb2f8" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd9747850a41a710bcf36f7e0392" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a188dd9747850b847677f65d04369b1b" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h5 class="wb-stl-subtitle" style="text-align: center;"><span style="color:rgba(255,255,255,1);">arte de la rosa</span></h5>
+</div><div id="a188dd9747850c7f58fc305990408860" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p style="text-align: center;"><span style="color:rgba(255,255,255,1);"><span class="wb-stl-special">You will find the latest information about our company here. You will find the latest information about our company...</span></span></p>
+</div><div id="a194c505a83c002d4490c78de73d4bd5" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd9747850d488b5b2b77d4d1d11b" class="wb_element" data-plugin="Button" style="outline: none solid #ff7600;overflow:visible;"><a class="wb_button" href="javascript:void(0);" data-popup-processed="true"><div class="wrap_button"><span></span><div class="subtext"><span>Shop now</span></div></div></a></div></div></div></div></div></div></div><div id="a188dd9747850e6b3a2b091f26aaa55a" class="wb_element wb-layout-element" data-plugin="LayoutElement"><a name="productos" class="wb_anchor" style="position: relative; top: -71px;" data-popup-processed="true"></a><div class="wb_content wb-layout-vertical"><div id="a188dd9747850f59dc7a85b81d07399f" class="wb_element wb-prevent-layout-click" data-plugin="Store" style="outline: none solid #ff7600;"><div class="wb-store wb-mob-store wb-tab-store"><a name="wbs1" class="wb_anchor" style="position: relative; top: -71px;" data-popup-processed="true"></a><div class="wb-store-filters wb-store-filters-top">
+	<div>
+							<div class="col-xs-12 col-sm-6">
+					<div class="dropdown wb-store-list-controls-sort" title="Sort">
+	</div>
+			</div>
+			</div>
+		<div class="clearfix"></div>
+</div>
+<div class="wb-store-list">
+
+
+<div>
+<div class="wb-store-item " data-item-id="1" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<img loading="lazy" src="gallery_gen/e5c0675653d0d229e9ae04b659f7e4bf_500x700_fill.jpg" alt="Centro de mesa - Foliar" class="thumbnail">						
+</a>
+</div>
+<div class="wb-store-name">
+<a data-popup-processed="true">Centro de mesa - Foliar</a>
+</div>
+<div class="wb-store-price">$500.000</div>
+</div>
+
+
+<div class="wb-store-item " data-item-id="2" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<a data-popup-processed="true">
+<img loading="lazy" src="gallery_gen/82aad9fade4428bf1fb138ed46428b9b_500x700_fill.jpg" alt="Centro de mesa" class="thumbnail">
+</a>
+</div>
+<div class="wb-store-name">
+<a  data-popup-processed="true">Centro de mesa</a>
+</div>
+<div class="wb-store-price">$500.000</div>
+
+
+
+
+</div>
+<div class="wb-store-item " data-item-id="18" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<a  data-popup-processed="true">
+<img loading="lazy" src="gallery_gen/26515001431d37983ca450641dd14068_500x700_fill.jpg" alt="Centro de mesa" class="thumbnail">
+</a>
+</div>
+<div class="wb-store-name">
+<a  data-popup-processed="true">Centro de mesa</a>
+</div>
+<div class="wb-store-price">$500.000</div>
+
+
+
+
+
+</div>
+<div class="wb-store-item " data-item-id="19" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<a  data-popup-processed="true">
+
+<img loading="lazy" src="gallery_gen/c99ba46385b447df11cc798b9aa160b6_500x700_fill.jpg" alt="Cantaro" class="thumbnail">
+
+</a>
+</div>
+<div class="wb-store-name">
+<a  data-popup-processed="true">Cantaro</a>
+</div>
+<div class="wb-store-price">$1.000.000</div>
+
+
+
+
+</div>
+<div class="wb-store-item " data-item-id="14" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<a data-popup-processed="true">
+
+<img loading="lazy" src="gallery_gen/f5b35b333867672eb821404b0730082d_500x700_fill.jpg" alt="Tarro geometría sagrada" class="thumbnail">
+
+</a>
+</div>
+<div class="wb-store-name">
+<a data-popup-processed="true">Tarro geometría sagrada</a>
+</div>
+<div class="wb-store-price">$60.000</div>
+
+
+
+
+<div class="wb-store-name">
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="wb-store-item " data-item-id="3" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+	<div class="wb-store-thumb">
+<a data-popup-processed="true">
+
+<img loading="lazy" src="gallery_gen/9cb5b2da49404c571e7952a74c530dee_500x700_fill.jpg" alt="Jarrón geometría sagrada" class="thumbnail">
+
+</a>
+</div>
+<div class="wb-store-name">
+<a data-popup-processed="true">Jarrón geometría sagrada</a>
+</div>
+<div class="wb-store-price">$600.000</div>
+
+
+
+</div>
+<div class="wb-store-item " data-item-id="5" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<a href="javascript:void(0);" data-popup-processed="true">
+
+<img loading="lazy" src="gallery_gen/d16feb77ef51e52ff55f2c34c29a12fa_500x700_fill.jpg" alt="Tarro geometría sagrada" class="thumbnail">
+
+</a>
+</div>
+<div class="wb-store-name">
+<a href="javascript:void(0);" data-popup-processed="true">Tarro geometría sagrada</a>
+</div>
+<div class="wb-store-price">$60.000</div>
+
+
+
+
+</div>
+<div class="wb-store-item " data-item-id="8" data-has-variants="0" onclick="this.classList.toggle('Zoomed');">
+<div class="wb-store-thumb">
+<a href="javascript:void(0);" data-popup-processed="true">
+<img loading="lazy" src="gallery_gen/34e2061fbdc5e3ff17e12b58daf82847_500x700_fill.jpg" alt="Jarrón precolombino" class="thumbnail">
+</a>
+</div>
+<div class="wb-store-name">
+<a href="javascript:void(0);" data-popup-processed="true">Jarrón precolombino</a>
+</div>
+<div class="wb-store-price">$600.000</div>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	$(function() { wb_require(['store/js/StoreList'], function(app) { app.init('a188dd9747850f59dc7a85b81d07399f', '/wb_cart/', "#wbs1", {'Added!': "Added!"}); }); });
+</script>
+<style></style>
+</div></div></div></div><div id="a188dd97478510db3327426ff4ab78ed" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"></div></div><div id="a188dd974785126d5af39f977e232a9d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><a name="History" class="wb_anchor" style="position: relative; top: -71px;" data-popup-processed="true"></a><div class="wb_content wb-layout-vertical"><div id="a188dd97478513bc78ffc6021bf6319c" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h2 class="wb-stl-heading2">Our history</h2>
+</div><div id="a188dd97478514d5d4c0bae8e3b5307d" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-normal" style="text-align: center;">You will find the latest information about us on this page. Our company is constantly evolving and growing. We provide wide range of services. Our mission is to provide best solution that helps everyone. If you want to contact us...</p>
+</div><div id="a188dd97478515306ef4328c7d577c9a" class="wb_element" data-plugin="Button" style="outline: none solid #ff7600;overflow:visible;"><a class="wb_button" href="#Contacts" data-popup-processed="true"><span>Contacts</span></a></div></div></div><div id="a188dd97478516ab6c49d73baf5c84f1" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd974785177aa137d50dd6a7b273" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a193019640b4007a1974621fabeca5e3" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"></div></div><div id="a188dd974785192fe1163647526789b4" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;">Cantaro diseño precolombino.</h3>
+</div><div id="a188dd9747851ab33926fa936c583a27" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-normal">Add your product description that will be useful for your customers. Add the exclusive properties of your product that will make customers want to buy it. Write your own text and style it in Store properties on Style tab.</p>
+</div></div></div><div id="a188dd9747851b66efb94f32d8538637" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a1930197ea8400239cd79959cc4863ee" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"></div></div><div id="a188dd9747851d0881e09bdbc5803c20" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h3 class="wb-stl-heading3" style="text-align: center;"><strong>Virgen Campesina</strong></h3>
+</div><div id="a188dd9747851ee557d22fd7d9b86f48" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-normal">Add your product description that will be useful for your customers. Add the exclusive properties of your product that will make customers want to buy it. Write your own text and style it in Store properties on Style tab.</p>
+</div></div></div></div></div><div id="a188dd9747851f995ebd1350b4955963" class="wb_element wb-layout-element" data-plugin="LayoutElement"><a name="Contacts" class="wb_anchor" style="position: relative; top: -71px;" data-popup-processed="true"></a><div class="wb_content wb-layout-vertical"><div id="a188dd974785200cb65a9c607810d157" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h2 class="wb-stl-heading2">Contacto</h2>
+</div><div id="a188dd974785216bf307b1a99bf2128b" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-normal" style="text-align: center;">Si quieres saber más de nosotros o agendar un trabajo en especial, puedes dejarnos tus datos, y nosotros te contactaremos.</p>
+</div><div id="a188dd97478522d93f23d9f3dd28959d" class="wb_element" data-plugin="Form" style="outline: none solid #ff7600;"><form id="a188dd97478522d93f23d9f3dd28959d_form" class="wb_form wb_mob_form wb_form_ltr wb_form_vertical" method="post" enctype="multipart/form-data" action="https://www.youtube.com"><textarea name="message" rows="3" cols="20" class="hpc" autocomplete="off"></textarea><table><tbody><tr><th>Name<span class="text-danger">&nbsp;*</span></th><td><input type="hidden" name="wb_input_0" value="Name"><div><input class="form-control form-field" type="text" value="" placeholder="" maxlength="255" name="wb_input_0" required="required"></div></td></tr><tr><th>Email<span class="text-danger">&nbsp;*</span></th><td><input type="hidden" name="wb_input_1" value="Email"><div><input class="form-control form-field" type="text" value="" placeholder="" maxlength="255" name="wb_input_1" required="required"></div></td></tr><tr class="area-row"><th>Message<span class="text-danger">&nbsp;*</span></th><td><input type="hidden" name="wb_input_2" value="Message"><div><textarea class="form-control form-field form-area-field" rows="4" placeholder="" name="wb_input_2" required="required"></textarea></div></td></tr><tr class="form-footer"><td colspan="2" class="text-center"><button type="submit" class="btn btn-default"><span>ENVIAR</span></button></td></tr></tbody></table></form><script type="text/javascript">
+						</script></div></div></div><div id="a188dd97478523bbb7ef524eb8e4a0e1" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a188dd974785248d2923816881d24ef6" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><h2 class="wb-stl-heading2" style="text-align: center;"><span style="color:rgba(255,255,255,1);"><strong>&nbsp;SIGUENOS EN</strong></span></h2>
+</div><div id="a188dd974785253353f79471c85855e5" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd974785263218837f2f67f590df" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap" style="height: 100%"><div class="wb-picture-wrapper" style="overflow: visible; display: flex"><a href="https://www.instagram.com/artedelarosapasto/" data-popup-processed="true"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="auto" viewBox="0 0 1793.982 1793.982" style="direction: ltr; color:#ffffff"><text x="385.501415" y="1537.02" font-size="1792" fill="currentColor" style="font-family: &quot;FontAwesome&quot;"></text></svg></a></div></div></div><div id="a188dd97478528edb0747a85388b3a37" class="wb_element wb_element_picture" data-plugin="Picture" title=""><div class="wb_picture_wrap" style="height: 100%"><div class="wb-picture-wrapper" style="overflow: visible; display: flex"><a href="https://www.instagram.com/artedelarosapasto/" data-popup-processed="true"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="auto" viewBox="0 0 1793.982 1793.982" style="direction: ltr; color:#ffffff"><text x="129.501415" y="1537.02" font-size="1792" fill="currentColor" style="font-family: &quot;FontAwesome&quot;"></text></svg></a></div></div></div></div></div></div></div><div id="a188dd974785297d042c4825d6e7fe6f" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd9747852a1c4d8832f42005bc9d" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd9747852b3e0276bf7f811ad5e6" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-normal"><strong>DIRECCIÓN:</strong></p>
+
+<p class="wb-stl-normal">Guacaloma 4 etapa manzana i casa #7</p>
+
+<p class="wb-stl-normal">PASTO - NARIÑO</p>
+</div><div id="a188dd9747852cb99ab12b32587c35da" class="wb_element wb_text_element" data-plugin="TextArea" style=" line-height: normal;"><p class="wb-stl-normal"><strong>CELULAR:</strong></p>
+
+<p class="wb-stl-normal"><a href="tel:+1 212 736 3100" data-popup-processed="true"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;"><span dir="ltr" style="direction: ltr;">+57 3013257981</span></span></span></span></span></span></span></span></span></span></span></span></a></p>
+
+<p class="wb-stl-normal">&nbsp;</p>
+
+<p class="wb-stl-normal"><strong>Email:</strong></p>
+
+<p class="wb-stl-normal"><a href="mailto:info@example.com" data-popup-processed="true">infoartedelarosa@gmail.com</a></p>
+</div></div></div></div></div></div></div><div id="wb_footer_a188dd97551b00de115a0c49ff9ea0c8" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-vertical"><div id="a188dd97478530ed1e9ee09683a44e91" class="wb_element wb-layout-element" data-plugin="LayoutElement"><div class="wb_content wb-layout-horizontal"><div id="a188dd97478531fb4fe137ed53bae834" class="wb_element wb-prevent-layout-click" data-plugin="LinkExchangeBadge"><div class="wb-stl-footer">Member of <i class="icon-wb-logo"></a></div></div></div></div></div></div>
+<div class="wb_pswp pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg" style="opacity: 0.7;"></div>
+	<div class="pswp__scroll-wrap">
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+		<div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" title="Close"></button>
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" title="Previous"></button>
+			<button class="pswp__button pswp__button--arrow--right" title="Next"></button>
+			<div class="pswp__caption"><div class="pswp__caption__center"></div></div>
+		</div>
+	</div>
+</div>
+</div>
+
+</body></html>
